@@ -1,4 +1,5 @@
 // Ý tưởng: Sliding Window (cửa sổ trượt) + lưu vị trí xuất hiện gần nhất của ký tự
+// Cấu trúc dữ liệu: Mảng (vector<int>) kích thước 128 để lưu vị trí xuất hiện gần nhất
 // Độ phức tạp thời gian: O(n)
 // Độ phức tạp bộ nhớ: O(1)
 
