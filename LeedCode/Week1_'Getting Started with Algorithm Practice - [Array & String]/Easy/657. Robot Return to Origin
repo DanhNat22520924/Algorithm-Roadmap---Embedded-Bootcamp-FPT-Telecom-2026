@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool judgeCircle(string moves) {
+        int x=0, y=0;
+        // duyệt từng lệnh di chuyển
+        for(char i:moves) {
+            if (i == 'R')
+            x++;
+            else if (i == 'L')
+            x--;
+            else if (i == 'U')
+            y++;
+            else 
+            y--;
+        }
+        // nếu quay lại đúng vị trí ban đầu (0,0)
+        if (x == 0 && y == 0)
+            return true;
+        return false;
+    }
+};
