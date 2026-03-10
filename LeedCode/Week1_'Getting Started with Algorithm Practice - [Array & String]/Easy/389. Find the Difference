@@ -1,0 +1,13 @@
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        int charSum = 0, i;
+        // duyệt qua toàn bộ chuỗi s
+        for(i = 0; i < s.size(); i++) {
+            charSum += t[i];
+            charSum -= s[i];
+        }
+// sau vòng lặp, t còn 1 ký tự cuối chưa được cộng, cộng ký tự đó vào để ra kết quả
+        return (char)(charSum + t[i]);
+    }
+};
