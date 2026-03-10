@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        vector<bool> result;
+
+        int maxCandies = candies[0];
+        // tìm số kẹo lớn nhất trong mảng
+        for (int i = 1; i < candies.size(); i++) {
+            if (candies[i] > maxCandies) {
+                maxCandies = candies[i];
+            }
+        }
+        // kiểm tra từng đứa trẻ nếu được thêm extraCandies
+        for (int i = 0; i < candies.size(); i++) {
+            result.push_back(candies[i] + extraCandies >= maxCandies);  // nếu sau khi thêm kẹo mà >= max hiện tại thì đứa trẻ đó có thể có nhiều kẹo nhất
+        }
+
+        return result;  
+    }
+};
