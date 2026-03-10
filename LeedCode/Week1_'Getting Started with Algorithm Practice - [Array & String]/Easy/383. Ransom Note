@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        // unordered_map dùng để lưu số lần xuất hiện của mỗi ký tự
+        unordered_map<char, int> m;
+        int i;
+        // duyệt magazine để đếm số lượng từng ký tự
+        for(i=0; i<magazine.size(); i++) {
+            m[magazine[i]]++;
+        }
+        // kiểm tra từng ký tự trong ransomNote
+        for(i=0; i<ransomNote.size(); i++) {
+            if (m[ransomNote[i]]>0) {
+                m[ransomNote[i]]--;
+            }
+            else{
+                // nếu không còn ký tự để dùng
+                return false;
+            }
+        }
+        // nếu dùng được hết ký tự thì tạo được ransomNote
+        return true;
+    }
+};
